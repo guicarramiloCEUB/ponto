@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ponto Eletrônico</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      
+    </nav>
+
+    <main>
+      <section class="data-hora">
+        <p id="dia-semana"></p>
+        <p id="data-atual"></p>
+        <p id="hora-atual"></p>
+      </section>
+
+      <section class="botoes">
+        <button id="btn-registrar-ponto" class="primary">
+          Registrar Ponto
+        </button>
+        <button id="btn-justificar-ausencia" class="primary">
+            Justificar Ausência
+          </button>
+      </section>
+    </main>
+
+    <dialog id="dialog-ponto">
+      <form method="dialog">
+        <h2>Registrar Ponto</h2>
+        <p id="dialog-data"></p>
+        <p id="dialog-hora"></p>
+        <p>
+          <label for="register-type">Tipo de Registro:</label>
+          <select name="register-type" id="register-type">
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+            <option value="entrada-intervalo">Entrada Intervalo</option>
+            <option value="saida-intervalo">Saída Intervalo</option>
+          </select>
+        </p>
+        <p>
+          <label for="dialog-date">Data do Registro:</label>
+          <input type="date" id="dialog-date" max="" />
+        </p>
+        <p>
+          <label for="dialog-note">Observação:</label><br />
+          <textarea
+            id="dialog-note"
+            rows="3"
+            cols="30"
+            placeholder="Adicione uma observação..."
+          ></textarea>
+        </p>
+        <menu>
+          <button id="btn-dialog-register" class="primary">Registrar</button>
+          <button id="dialog-fechar">Fechar</button>
+        </menu>
+      </form>
+    </dialog>
+    <dialog id="dialog-justificativa">
+      <form method="dialog">
+        <h2>Justificar Ausência</h2>
+        <p>
+          <label for="justificativa-data">Data da Ausência:</label>
+          <input type="date" id="justificativa-data" max="" />
+        </p>
+        <p>
+          <label for="justificativa-texto">Justificativa:</label><br />
+          <textarea
+            id="justificativa-texto"
+            rows="3"
+            cols="30"
+            placeholder="Descreva a justificativa..."
+          ></textarea>
+        </p>
+        <p>
+          <label for="justificativa-arquivo">Anexar Arquivo:</label>
+          <input type="file" id="justificativa-arquivo" />
+        </p>
+        <p>
+          <small
+            >Nota: O arquivo anexado só estará disponível enquanto esta página
+            estiver aberta.</small
+          >
+        </p>
+        <menu>
+          <button id="btn-enviar-justificativa" class="primary">
+            Enviar Justificativa
+          </button>
+          <button id="dialog-justificativa-fechar">Fechar</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <div id="alerta-ponto-registrado" class="alert hidden">
+      <p id="alerta-mensagem"></p>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
