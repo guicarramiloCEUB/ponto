@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ponto Eletrônico</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="main">
+        <div class="data-hora">
+            <p id="dia-semana"></p>
+            <p id="data-atual"></p>
+            <p id="hora-atual"></p>
+        </div>
+        <button id="btn-registrar-ponto">Registrar ponto</button>
+        <button id="btn-justificar-ausencia">Justificar ausencia</button>
+        <button id="btn-justificar-ausencia"><a href="html/relatorio.html">relatorio</a></button>
+    </section>
+
+    <dialog id="dialog-ponto">
+        <p id="dialog-data"></p>
+        <p id="dialog-hora"></p>
+        <select name="register-type" id="register-type">
+            <option value="entrada">Entrada</option>
+            <option value="intervalo">Intervalo</option>
+            <option value="volta-intervalo">Volta Intervalo</option>
+            <option value="saida">Saída</option>
+        </select>
+        <button id="btn-dialog-register">Registrar</button>
+        <p id="dialog-ultimo-registro"></p>
+        <button id="dialog-fechar">X</button>
+    </dialog>
+
+    <dialog id="dialog-justificativa">
+        <form method="dialog">
+          <h2>Justificar Ausência</h2>
+          <p>
+            <label for="justificativa-data">Data da Ausência:</label>
+            <input type="date" id="justificativa-data" max="" />
+          </p>
+          <p>
+            <label for="justificativa-texto">Justificativa:</label><br />
+            <textarea
+              id="justificativa-texto"
+              rows="3"
+              cols="30"
+              placeholder="Descreva a justificativa..."
+            ></textarea>
+          </p>
+          <p>
+            <label for="justificativa-arquivo">Anexar Arquivo:</label>
+            <input type="file" id="justificativa-arquivo" />
+          </p>
+          <p>
+            <small
+              >Nota: O arquivo anexado só estará disponível enquanto esta página
+              estiver aberta.</small>
+          </p>
+          <menu>
+            <button id="btn-enviar-justificativa" class="primary">
+              Enviar Justificativa
+            </button>
+            <button id="dialog-justificativa-fechar">Fechar</button>
+          </menu>
+        </form>
+    </dialog>  
+
+    <div id="alerta-ponto-registrado" class="hidden">
+        <p>Ponto registrado com sucesso!</p>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
